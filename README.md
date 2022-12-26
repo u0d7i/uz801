@@ -1,6 +1,13 @@
 # msm8916
 MSM8916 LTE 4G WiFi Dongle
 
+## Images
+![MSM8916 Dongle](img/4g-01.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/4g-02.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/4g-03.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/4g-04.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/4g-05.png?raw=true "MSM8916 Dongle")
+
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
 - [openwrt forum](https://forum.openwrt.org/t/uf896-qualcomm-msm8916-lte-router-384mib-ram-2-4gib-flash-android-openwrt/131712)
