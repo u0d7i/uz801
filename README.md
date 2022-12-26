@@ -1,4 +1,5 @@
 # msm8916
+MSM8916 LTE 4G WiFi Dongle
 
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
