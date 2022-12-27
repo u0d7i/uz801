@@ -265,11 +265,11 @@ Device Status:     0x0000
 ```
 
 # Web Interface
-www03.png
 ![MSM8916 Dongle](img/www01.png?raw=true "MSM8916 Dongle")
+---
 ![MSM8916 Dongle](img/www02.png?raw=true "MSM8916 Dongle")
+---
 ![MSM8916 Dongle](img/www03.png?raw=true "MSM8916 Dongle")
-
 
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
