@@ -264,6 +264,13 @@ Device Status:     0x0000
   (Bus Powered)
 ```
 
+# Web Interface
+www03.png
+![MSM8916 Dongle](img/www01.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/www02.png?raw=true "MSM8916 Dongle")
+![MSM8916 Dongle](img/www03.png?raw=true "MSM8916 Dongle")
+
+
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
 - [openwrt forum](https://forum.openwrt.org/t/uf896-qualcomm-msm8916-lte-router-384mib-ram-2-4gib-flash-android-openwrt/131712)
