@@ -264,13 +264,52 @@ Device Status:     0x0000
   (Bus Powered)
 ```
 
-# Web Interface
+## Web Interface
 ![MSM8916 Dongle](img/www01.png?raw=true "MSM8916 Dongle")
 ---
 ![MSM8916 Dongle](img/www02.png?raw=true "MSM8916 Dongle")
 ---
 ![MSM8916 Dongle](img/www03.png?raw=true "MSM8916 Dongle")
 ---
+
+## adb
+```
+$ adb devices
+List of devices attached
+0123456789ABCDEF        device
+```
+
+If not, in web interface, after entering admin credentials, go to this url:
+http://192.168.100.1/usbdebug.html
+
+```
+$ adb shell id
+uid=0(root) gid=0(root) context=u:r:shell:s0
+
+```
+
+The most relevant device info lines from getprop
+```
+$ adb shell getprop
+...
+[ro.build.description]: [msm8916_32_512-userdebug 4.4.4 KTU84P eng..20220715 test-keys]
+[ro.build.display.id]: [V3.4.3]
+[ro.build.fingerprint]: [qcom/msm8916_32_512/msm8916_32_512:4.4.4/KTU84P/eng..20220715:userdebug/test-keys]
+[ro.build.host]: [be7be4acc41b]
+[ro.build.id]: [UZ801]
+[ro.build.product]: [msm8916_32_512]
+[ro.build.version.release]: [4.4.4]
+[ro.build.version.sdk]: [19]
+[ro.product.board]: [ALK]
+[ro.product.brand]: [qcom]
+[ro.product.cpu.abi2]: [armeabi]
+[ro.product.cpu.abi]: [armeabi-v7a]
+[ro.product.device]: [msm8916_32_512]
+[ro.product.manufacturer]: [Qualcomm Technology]
+[ro.product.model]: [UZ801]
+[ro.product.name]: [msm8916_32_512]
+
+```
 
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
