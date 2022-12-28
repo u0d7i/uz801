@@ -105,7 +105,7 @@ $ adb shell getprop
 ```
 
 ## screenshots
-Despite device is is lacking screen, you can still view what supposed to be on it
+Despite device is is lacking screen, you can still view what supposed to be on it.
 
 Check current screen off timeout value:
 ```
@@ -160,10 +160,12 @@ Some other commands to try:
 com.android.settings/.RadioInfo
 com.android.settings/.BatteryInfo
 ```
-Use dumpsys get to candidate activities list in the app:
+Use dumpsys to get candidate activities list in the app:
 ```
 $ adb shell dumpsys package com.android.settings | grep com.android.settings/
 ```
+P.S. [scrcpy](https://github.com/Genymobile/scrcpy) is not supported on this device (requires API 21 / Android 5.0).
+
 
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
