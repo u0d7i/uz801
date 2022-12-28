@@ -265,12 +265,10 @@ Device Status:     0x0000
 ```
 
 ## Web Interface
-![MSM8916 Dongle](img/www01.png?raw=true "MSM8916 Dongle")
----
-![MSM8916 Dongle](img/www02.png?raw=true "MSM8916 Dongle")
----
-![MSM8916 Dongle](img/www03.png?raw=true "MSM8916 Dongle")
----
+
+| ![w](img/www01.png?raw=true) |                              |
+|------------------------------|------------------------------|
+| ![w](img/www02.png?raw=true) | ![w](img/www03.png?raw=true) |
 
 ## adb
 ```
