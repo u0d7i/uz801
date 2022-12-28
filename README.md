@@ -3,9 +3,7 @@ Qualcomm MSM8916 LTE 4G WiFi Dongle (UZ801)
 
 ## Images
 | ![i1](img/4g-01.png?raw=true) | ![i4](img/4g-04.png?raw=true) |
-|-------------------------------|-------------------------------|
 | ![i2](img/4g-02.png?raw=true) | ![i5](img/4g-05.png?raw=true) |
-|-------------------------------|-------------------------------|
 | ![i3](img/4g-03.png?raw=true) |                               |
 
 # Labeling
