@@ -123,6 +123,11 @@ $ adb shell settings get system screen_off_timeout
 2147483647
 
 ```
+Wake the screen by pressing Power Button
+```
+$ adb shell input keyevent 26
+```
+
 Make a screenshot, and download it:
 ```
 $ adb shell screencap /sdcard/Download/screen01.png
@@ -154,6 +159,10 @@ Some other commands to try:
 ```
 com.android.settings/.RadioInfo
 com.android.settings/.BatteryInfo
+```
+Use dumpsys get to candidate activities list in the app:
+```
+$ adb shell dumpsys package com.android.settings | grep com.android.settings/
 ```
 
 ## Featuring
