@@ -142,6 +142,20 @@ $ adb shell input tap 100 100
 | ![s1](img/screen01.png?raw=true) | ![s2](img/screen02.png?raw=true) | ![s3](img/screen03.png?raw=true) |
 |----------------------------------|----------------------------------|----------------------------------|
 
+Rin some apps and see the output:
+```
+$ adb shell am start -n 'com.android.settings/.deviceinfo.Status'
+Starting: Intent { cmp=com.android.settings/.deviceinfo.Status }
+
+$ adb shell screencap /sdcard/Download/screen04.png
+$ adb pull /sdcard/Download/screen04.png
+```
+Some other commands to try:
+```
+com.android.settings/.RadioInfo
+com.android.settings/.BatteryInfo
+```
+
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
 - [openwrt forum](https://forum.openwrt.org/t/uf896-qualcomm-msm8916-lte-router-384mib-ram-2-4gib-flash-android-openwrt/131712)
