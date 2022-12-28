@@ -2,9 +2,8 @@
 Qualcomm MSM8916 LTE 4G WiFi Dongle (UZ801)
 
 ## Images
-|                               |                               |
-|-------------------------------|-------------------------------|
 | ![i1](img/4g-01.png?raw=true) | ![i4](img/4g-04.png?raw=true) |
+|-------------------------------|-------------------------------|
 | ![i2](img/4g-02.png?raw=true) | ![i5](img/4g-05.png?raw=true) |
 | ![i3](img/4g-03.png?raw=true) |                               |
 
@@ -346,6 +345,9 @@ Tap the screen to remove the warning:
 $ adb shell input tap 100 100
 ```
 ![MSM8916 Dongle](img/screen03.png?raw=true "MSM8916 Dongle")
+
+| ![s1](img/screen01.png?raw=true) | ![s2](img/screen02.png?raw=true) | ![s3](img/screen02.png?raw=true) |
+|----------------------------------|----------------------------------|----------------------------------|
 
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
