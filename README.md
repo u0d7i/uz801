@@ -136,7 +136,7 @@ $ adb pull /sdcard/Download/screen01.png
 
 I'm not good at Mandarin, so, need to do something about it
 ```
-$ adb shell "setprop persist.sys.language en; setprop persist.sys.country US; setprop ctl.restart zygote"
+$ adb shell "setprop persist.sys.locale en-US; setprop ctl.restart zygote"
 ```
 
 Tap the screen to remove the warning:
