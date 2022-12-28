@@ -311,6 +311,44 @@ $ adb shell getprop
 
 ```
 
+## screenshots
+Despite device is is lacking screen, you can still view what supposed to be on it
+
+Check current screen off timeout value:
+```
+$ adb shell settings get system screen_off_timeout
+60000
+```
+It's 60000 milliseconds = 1 minute, meaning if we try doing screenshot in 1 minute
+we will get blank screen. Let's change it.
+```
+$ adb shell dumpsys power | grep OffTimeout
+  mScreenOffTimeoutSetting=60000
+  mMaximumScreenOffTimeoutFromDeviceAdmin=2147483647 (enforced=false)
+$ adb shell settings put system screen_off_timeout 2147483647
+$ adb shell settings get system screen_off_timeout
+2147483647
+
+```
+Make a screenshot, and download it:
+```
+$ adb shell screencap /sdcard/Download/screen01.png
+$ adb pull /sdcard/Download/screen01.png
+```
+![MSM8916 Dongle](img/screen01.png?raw=true "MSM8916 Dongle")
+
+I'm not good at Mandarin, so, need to do something about it
+```
+$ adb shell "setprop persist.sys.language en; setprop persist.sys.country US; setprop ctl.restart zygote"
+```
+![MSM8916 Dongle](img/screen02.png?raw=true "MSM8916 Dongle")
+
+Tap the screen to remove the warning:
+```
+$ adb shell input tap 100 100
+```
+![MSM8916 Dongle](img/screen03.png?raw=true "MSM8916 Dongle")
+
 ## Featuring
 - [hackaday](https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/)
 - [openwrt forum](https://forum.openwrt.org/t/uf896-qualcomm-msm8916-lte-router-384mib-ram-2-4gib-flash-android-openwrt/131712)
