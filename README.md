@@ -332,21 +332,18 @@ Make a screenshot, and download it:
 $ adb shell screencap /sdcard/Download/screen01.png
 $ adb pull /sdcard/Download/screen01.png
 ```
-![MSM8916 Dongle](img/screen01.png?raw=true "MSM8916 Dongle")
 
 I'm not good at Mandarin, so, need to do something about it
 ```
 $ adb shell "setprop persist.sys.language en; setprop persist.sys.country US; setprop ctl.restart zygote"
 ```
-![MSM8916 Dongle](img/screen02.png?raw=true "MSM8916 Dongle")
 
 Tap the screen to remove the warning:
 ```
 $ adb shell input tap 100 100
 ```
-![MSM8916 Dongle](img/screen03.png?raw=true "MSM8916 Dongle")
 
-| ![s1](img/screen01.png?raw=true) | ![s2](img/screen02.png?raw=true) | ![s3](img/screen02.png?raw=true) |
+| ![s1](img/screen01.png?raw=true) | ![s2](img/screen02.png?raw=true) | ![s3](img/screen03.png?raw=true) |
 |----------------------------------|----------------------------------|----------------------------------|
 
 ## Featuring
