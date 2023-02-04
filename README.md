@@ -66,8 +66,8 @@ Bus 001 Device 008: ID 05c6:90b6 Qualcomm, Inc. Android
 
 ## EDL
 
-Device can enter [EDL](https://en.wikipedia.org/wiki/Qualcomm_EDL_mode) mode by short cutting D+ to GND on USB,
-and releasing after plug-in.  The easiest way to do so is via [DIY EDL cable](https://wiki.bananahackers.net/development/edl/diy-edl-cable).
+Device can enter [EDL](https://en.wikipedia.org/wiki/Qualcomm_EDL_mode) mode by shorting D+ to GND on USB,
+and releasing after plug-in. The easiest way to do so is via [diy EDL cable](https://wiki.bananahackers.net/development/edl/diy-edl-cable).
 
 Dmesg in EDL mode:
 
@@ -82,8 +82,39 @@ lsusb in EDL mode:
 Bus 001 Device 015: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 ```
 
-[Standard edl client](https://github.com/bkerler/edl) works out of the box without the need of specifiing loader manually:
+[Standard edl client](https://github.com/bkerler/edl) works with autodetection,  without the need of specifiing loader manually:
 ```
+$ edl
+Qualcomm Sahara / Firehose Client V3.53 (c) B.Kerler 2018-2021.
+main - Trying with no loader given ...
+main - Waiting for the device
+main - Device detected :)
+main - Mode detected: sahara
+Device is in EDL mode .. continuing.
+sahara - 
+------------------------
+HWID:              0x007050e100000000 (MSM_ID:0x007050e1,OEM_ID:0x0000,MODEL_ID:0x0000)
+CPU detected:      "MSM8916"
+PK_HASH:           0xcc3153a80293939b90d02d3bf8b23e0292e452fef662c74998421adad42a380f
+Serial:            0x1234567a
+
+sahara - Possibly unfused device detected, so any loader should be fine...
+sahara - Possible loader available: ... 
+...
+
+sahara - Trying loader: ...
+sahara - Uploading loader ...
+Successfully uploaded programmer :)
+firehose_client - Target detected: MSM8916
+firehose_client
+firehose_client - [LIB]: Based on the chipset, we assume eMMC as default memory type..., if it fails, try using --memory" with "UFS","NAND" or "spinor" instead !
+firehose - TargetName=
+firehose - MemoryName=eMMC
+firehose - Version=
+firehose_client - Supported functions:
+-----------------
+^C
+
 $ edl
 Qualcomm Sahara / Firehose Client V3.53 (c) B.Kerler 2018-2021.
 main - Trying with no loader given ...
@@ -101,6 +132,74 @@ firehose - Version=1
 firehose_client - Supported functions:
 -----------------
 configure,program,firmwarewrite,patch,setbootablestoragedrive,ufs,emmc,power,benchmark,read,getstorageinfo,getcrc16digest,getsha256digest,erase,peek,poke,nop,xml
+
+```
+
+## Backup
+Before messing around, we need a backup of stock firmware in case we need to restore.
+
+Save gpt layout:
+```
+$ edl printgpt | tee stock-uz801.gpt.txt
+```
+
+Backup whole image (for ease of restoring):
+``
+$ edl rf stock-uz801.bin
+...
+
+$ du -hs stock-uz801.bin
+3.7G    stock-uz801.bin
+
+$ bzip2 -9 stock-uz801.bin
+$ du -hs stock-uz801.bin.bz2
+241M    stock-uz801.bin.bz2
+``
+
+Backup individual partitions (you can exclude cache and userdata here):
+```
+$ edl rl stock-uz801 --genxml
+...
+
+$ cd stock-uz801
+$ md5sum *.bin > _checksums.md5
+```
+
+Some stock blobs are available online [here](https://github.com/OpenStick/stick-blobs/tree/main/stock-uz801).
+Below are md5sum differences from my dump:
+```
+abootbak.bin: FAILED
+aboot.bin: FAILED
+boot.bin: FAILED
+cache.bin: FAILED open or read
+DDR.bin: OK
+fsc.bin: OK
+fsg.bin: OK
+gpt_backup0.bin: FAILED
+gpt_main0.bin: FAILED
+hypbak.bin: OK
+hyp.bin: OK
+misc.bin: OK
+modem.bin: OK
+modemst1.bin: FAILED
+modemst2.bin: FAILED
+pad.bin: OK
+persist.bin: FAILED
+recovery.bin: FAILED
+rpmbak.bin: OK
+rpm.bin: OK
+sbl1bak.bin: OK
+sbl1.bin: OK
+sec.bin: OK
+splash.bin: OK
+ssd.bin: OK
+system.bin: FAILED open or read
+tzbak.bin: OK
+tz.bin: OK
+userdata.bin: FAILED open or read
+
+md5sum: WARNING: 3 listed files could not be read
+md5sum: WARNING: 9 computed checksums did NOT match
 
 ```
 
@@ -186,7 +285,7 @@ $ adb shell input tap 100 100
 | ![s1](img/screen01.png?raw=true) | ![s2](img/screen02.png?raw=true) | ![s3](img/screen03.png?raw=true) |
 |----------------------------------|----------------------------------|----------------------------------|
 
-Rin some apps and see the output:
+Run some apps and see the output:
 ```
 $ adb shell am start -n 'com.android.settings/.deviceinfo.Status'
 Starting: Intent { cmp=com.android.settings/.deviceinfo.Status }
