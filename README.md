@@ -143,7 +143,7 @@ $ edl printgpt | tee stock-uz801.gpt.txt
 ```
 
 Backup whole image (for ease of restoring):
-``
+```
 $ edl rf stock-uz801.bin
 ...
 
