@@ -153,7 +153,12 @@ $ du -hs stock-uz801.bin
 $ bzip2 -9 stock-uz801.bin
 $ du -hs stock-uz801.bin.bz2
 241M    stock-uz801.bin.bz2
-``
+```
+
+Restore from it:
+```
+$ edl wf stock-uz801.bin
+```
 
 Backup individual partitions (you can exclude cache and userdata here):
 ```
