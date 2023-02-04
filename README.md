@@ -1,5 +1,5 @@
-# msm8916
-Qualcomm MSM8916 LTE 4G WiFi Dongle (UZ801)
+# UZ801
+Qualcomm MSM8916 LTE 4G WiFi Dongle
 
 ## Images
 | ![i1](img/4g-01.png?raw=true) | ![i4](img/4g-04.png?raw=true) |
@@ -39,7 +39,6 @@ G124-2112-0036
 
 ## dmesg
 ```
-usb 1-4: new high-speed USB device number 8 using xhci_hcd
 usb 1-4: New USB device found, idVendor=05c6, idProduct=90b6, bcdDevice=ff.ff
 usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 usb 1-4: Product: Android
@@ -64,6 +63,46 @@ Bus 001 Device 008: ID 05c6:90b6 Qualcomm, Inc. Android
 | ![w](img/www01.png?raw=true) |                              |
 |------------------------------|------------------------------|
 | ![w](img/www02.png?raw=true) | ![w](img/www03.png?raw=true) |
+
+## EDL
+
+Device can enter [EDL](https://en.wikipedia.org/wiki/Qualcomm_EDL_mode) mode by short cutting D+ to GND on USB,
+and releasing after plug-in.  The easiest way to do so is via [DIY EDL cable](https://wiki.bananahackers.net/development/edl/diy-edl-cable).
+
+Dmesg in EDL mode:
+
+```
+usb 1-8: New USB device found, idVendor=05c6, idProduct=9008, bcdDevice= 0.00
+usb 1-8: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+usb 1-8: Product: QHSUSB__BULK
+
+```
+lsusb in EDL mode:
+```
+Bus 001 Device 015: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
+```
+
+[Standard edl client](https://github.com/bkerler/edl) works out of the box without the need of specifiing loader manually:
+```
+$ edl
+Qualcomm Sahara / Firehose Client V3.53 (c) B.Kerler 2018-2021.
+main - Trying with no loader given ...
+main - Waiting for the device
+main - Device detected :)
+main - Mode detected: firehose
+firehose - Nop succeeded.
+firehose - No supported functions detected, configuring qc generic commands
+firehose - 
+firehose_client
+firehose_client - [LIB]: No --memory option set, we assume "eMMC" as default ..., if it fails, try using "--memory" with "UFS","NAND" or "spinor" instead !
+firehose - TargetName=MSM8916
+firehose - MemoryName=eMMC
+firehose - Version=1
+firehose_client - Supported functions:
+-----------------
+configure,program,firmwarewrite,patch,setbootablestoragedrive,ufs,emmc,power,benchmark,read,getstorageinfo,getcrc16digest,getsha256digest,erase,peek,poke,nop,xml
+
+```
 
 ## adb
 ```
