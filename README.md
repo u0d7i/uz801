@@ -245,6 +245,11 @@ $ adb shell getprop
 [ro.product.name]: [msm8916_32_512]
 
 ```
+Demesg output from device:
+```
+$ adb shell dmesg | tee dmesg.txt
+```
+[dmesg output](dmesg.txt)
 
 ## screenshots
 Despite device is is lacking screen, you can still view what supposed to be on it.
