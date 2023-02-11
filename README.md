@@ -169,7 +169,8 @@ $ cd stock-uz801
 $ md5sum *.bin > _checksums.md5
 ```
 
-Some stock blobs are available online [here](https://github.com/OpenStick/stick-blobs/tree/main/stock-uz801).
+Some stock blobs are available online [here](https://github.com/OpenStick/stick-blobs/tree/main/stock-uz801)
+and [here](https://github.com/Mio-sha512/openstick-stuff/releases).
 Below are md5sum differences from my dump:
 ```
 abootbak.bin: FAILED
