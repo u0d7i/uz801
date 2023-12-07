@@ -67,7 +67,7 @@ Bus 001 Device 008: ID 05c6:90b6 Qualcomm, Inc. Android
 ## EDL
 
 Device can enter [EDL](https://en.wikipedia.org/wiki/Qualcomm_EDL_mode) mode by shorting D+ to GND on USB,
-and releasing after plug-in. The easiest way to do so is via [diy EDL cable](https://wiki.bananahackers.net/development/edl/diy-edl-cable).
+and releasing after plug-in. The easiest way to do so is via [diy EDL cable](https://wiki.bananahackers.net/en/guides/edl/cable).
 
 Dmesg in EDL mode:
 
