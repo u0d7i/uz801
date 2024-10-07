@@ -320,4 +320,4 @@ P.S. [scrcpy](https://github.com/Genymobile/scrcpy) is not supported on this dev
 - [openwrt forum](https://forum.openwrt.org/t/uf896-qualcomm-msm8916-lte-router-384mib-ram-2-4gib-flash-android-openwrt/131712)
 - [4pda](https://4pda.to/forum/index.php?showtopic=849043)
 - [blinkenlights](https://www.blinkenlights.ch/ccms/posts/aliexpress-lte-1/)
-- [extrowerk](https://extrowerk.com/2022/07/31/OpenStick/)
+- [extrowerk](https://extrowerk.com/2022-07-31/OpenStick.html)
